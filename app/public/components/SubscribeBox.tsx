@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SubscribeBox: React.FC = () => {
+export default function SubscribeBox({ onTap } : {onTap : () => void }) {
     return (
         <div className="flex flex-col items-center justify-center">
             {/* <div className="mb-2 text-center font-bold text-sm">
@@ -19,12 +19,10 @@ const SubscribeBox: React.FC = () => {
                 </div>
             </div> */}
 
-            <button className="text-black font-regular p-2 rounded-lg border border-black hover:bg-primaryGreen hover:text-white">
+            <button onClick={onTap} className="text-black font-regular p-2 rounded-lg border border-black hover:bg-primaryGreen hover:text-white">
                 Subscribe Now
             </button>
         </div>
     );
 
 };
-
-export default SubscribeBox;

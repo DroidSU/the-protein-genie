@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primaryGreen: '#7B8454', // Replace with your hex code
+        primaryGreen: '#3B4A2E', // Replace with your hex code
       },
       keyframes: {
         dropdown: {

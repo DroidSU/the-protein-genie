@@ -11,19 +11,23 @@ import SubscribeBox from "./public/components/SubscribeBox";
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    // Show dialog 1 second after component mounts
-    const timer = setTimeout(() => {
-      setIsDialogOpen(true);
-    }, 1000);
+  // useEffect(() => {
+  //   // Show dialog 1 second after component mounts
+  //   const timer = setTimeout(() => {
+  //     setIsDialogOpen(true);
+  //   }, 1000);
 
-    // Cleanup timer on component unmount
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Cleanup timer on component unmount
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
+  const openDialog = () => {
+    setIsDialogOpen(true);
   };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+  }
 
   return (
     <div className="relative min-h-screen">
@@ -33,23 +37,31 @@ export default function Home() {
           backgroundImage: `url(${backgroundImage.src})`,
         }}>
 
-        <Navigation />
+        <div className="absolute mt-4 mr-5 right-0 top-0 p-4 text-black font-regular text-primaryGreen">
+          Contact US
+        </div>
+
+        <div className="mt-4 ml-5">
+          <Navigation />
+        </div>
 
         <div className="flex flex-col flex-grow">
           <div className="absolute mt-5 left-10 bottom-1/4 text-black text-left">
             <div className="font-regular  text-[30px] leading-tight">The</div>
-            <div className="font-bold text-[60px] text-primaryGreen leading-none">PROTEIN</div>
-            <div className="font-bold text-[60px] text-primaryGreen leading-none">GENIE</div>
+            <div className="font-bold text-[90px] text-primaryGreen leading-none">PROTEIN</div>
+            <div className="font-bold text-[90px] text-primaryGreen leading-none">GENIE</div>
           </div>
 
           <div className="absolute left-10 bottom-20">
-            <SubscribeBox />
+            <SubscribeBox onTap={openDialog} />
           </div>
         </div>
 
+        <SubscribeDialog isOpen={isDialogOpen} onClose={closeDialog}/>
+
       </div>
 
-      {/* <SubscribeDialog isOpen={isDialogOpen} onClose={handleCloseDialog} /> */}
+      
     </div>
   );
 }

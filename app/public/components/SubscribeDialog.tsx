@@ -1,7 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function SubscribeDialog({ isOpen, onClose }: { isOpen: Boolean, onClose: () => void }) {
     const [email, setEmail] = useState('')
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+          if (event.key === 'Escape') {
+            onClose();
+          }
+        };
+    
+        if (isOpen) {
+          document.addEventListener('keydown', handleKeyDown);
+        }
+    
+        return () => {
+          document.removeEventListener('keydown', handleKeyDown);
+        };
+      }, [isOpen, onClose]);
 
     if (!isOpen) {
         return null
@@ -26,7 +42,7 @@ export default function SubscribeDialog({ isOpen, onClose }: { isOpen: Boolean, 
 
                     <button
                         onClick={onClose}
-                        className="bg-blue-500 text-sm text-white px-4 py-2 rounded hover:bg-blue-600"
+                        className="bg-primaryGreen text-sm text-white px-4 py-2 rounded hover:bg-primaryGreen"
                     >
                         Subscribe
                     </button>

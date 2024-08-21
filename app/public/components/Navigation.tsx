@@ -5,7 +5,7 @@ const Navigation: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="flex mt-4 ml-5 justify-start items-center p-4 bg-white-800">
+        <nav className="flex justify-start items-center p-4 bg-white-800">
             {/* <div className="text-white text-lg font-montserrat-bold">
                 Brand
             </div> */}
@@ -39,10 +39,10 @@ const Navigation: React.FC = () => {
                     <Link href="/" className="font-montserrat-bold text-white hover:font-montserrat-italic">
                         Home
                     </Link>
-                    <Link href="/product" className="font-montserrat text-white hover:font-montserrat-bold hover:italic">
+                    <Link href="/" className="font-montserrat text-white hover:font-montserrat-bold hover:italic">
                         Product
                     </Link>
-                    <Link href="/about" className="font-montserrat-italic text-white hover:font-montserrat-bold hover:not-italic">
+                    <Link href="/" className="font-montserrat-italic text-white hover:font-montserrat-bold hover:not-italic">
                         About
                     </Link>
                 </div>

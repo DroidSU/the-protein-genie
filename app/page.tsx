@@ -37,15 +37,15 @@ export default function Home() {
           backgroundImage: `url(${backgroundImage.src})`,
         }}>
 
-        <div className="absolute mt-4 mr-5 right-0 top-0 p-4 text-black font-regular text-primaryGreen">
+        {/* <div className="absolute mt-4 mr-5 right-0 top-0 p-4 text-black font-regular text-primaryGreen">
           Contact US
-        </div>
+        </div> */}
 
-        <div className="mt-4 ml-5">
+        <div className="mt-2 ml-5 text-lg">
           <Navigation />
         </div>
 
-        <div className="flex flex-col flex-grow">
+        <div className="hidden md:flex md:flex-col md:flex-grow">
           <div className="absolute mt-5 left-10 bottom-1/4 text-black text-left">
             <div className="font-regular  text-[30px] leading-tight">The</div>
             <div className="font-bold text-[90px] text-primaryGreen leading-none">PROTEIN</div>
@@ -57,7 +57,7 @@ export default function Home() {
           </div>
         </div>
 
-        <SubscribeDialog isOpen={isDialogOpen} onClose={closeDialog}/>
+        <SubscribeDialog isOpen={isDialogOpen} onTapped={closeDialog}/>
 
       </div>
 

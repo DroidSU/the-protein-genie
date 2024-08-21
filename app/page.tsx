@@ -11,16 +11,6 @@ import SubscribeBox from "./public/components/SubscribeBox";
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   // Show dialog 1 second after component mounts
-  //   const timer = setTimeout(() => {
-  //     setIsDialogOpen(true);
-  //   }, 1000);
-
-  //   // Cleanup timer on component unmount
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   const openDialog = () => {
     setIsDialogOpen(true);
   };

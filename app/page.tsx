@@ -1,10 +1,12 @@
 'use client';
 
 import Image from "next/image";
-import logo from '../public/logo_black.png'
-import backgroundImage from '../public/img_quesadilla_1.webp'
+import logo from '../public/logo_single_line.png'
+import backgroundImage from '../public/background_salad.jpg'
 import { useEffect, useState } from "react";
 import SubscribeDialog from "./public/components/SubscribeDialog";
+import Navigation from "./public/components/Navigation";
+import SubscribeBox from "./public/components/SubscribeBox";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
@@ -25,25 +27,29 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen">
-      {/* <div
-        className="absolute inset-0 bg-cover bg-center opacity-70"
+      <div
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
         }}>
 
-      </div> */}
+        <Navigation />
 
-      <div className="fixed top-2 left-0 right-0 flex justify-center p-4">
-        <Image
-          src={logo}
-          alt="Brand Logo"
-          width={250}
-          height={150}
-          className="w-24 h-auto sm:w-60 sm:h-auto" // Adjusts size for different screen sizes
-        />
+        <div className="flex flex-col flex-grow">
+          <div className="absolute mt-5 left-10 bottom-1/4 text-black text-left">
+            <div className="font-regular  text-[30px] leading-tight">The</div>
+            <div className="font-bold text-[60px] text-primaryGreen leading-none">PROTEIN</div>
+            <div className="font-bold text-[60px] text-primaryGreen leading-none">GENIE</div>
+          </div>
+
+          <div className="absolute left-10 bottom-20">
+            <SubscribeBox />
+          </div>
+        </div>
+
       </div>
 
-      <SubscribeDialog isOpen={isDialogOpen} onClose={handleCloseDialog} />
+      {/* <SubscribeDialog isOpen={isDialogOpen} onClose={handleCloseDialog} /> */}
     </div>
   );
 }

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primaryGreen: '#7B8454', // Replace with your hex code
+      },
       keyframes: {
         dropdown: {
           '0%': { transform: 'translateY(-100%)', opacity: '0' },

@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden text-white">
+            <div className="md:hidden text-black text-2xl leading-none">
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="focus:outline-none"
@@ -35,14 +35,14 @@ const Navigation: React.FC = () => {
 
             {/* Mobile Dropdown Menu */}
             {isMenuOpen && (
-                <div className="md:hidden flex flex-col space-y-2 absolute top-16 left-0 w-full bg-gray-800 p-4">
-                    <Link href="/" className="font-montserrat-bold text-white hover:font-montserrat-italic">
+                <div className="md:hidden flex flex-col space-y-2 absolute top-16 left-5 w-full bg-black-800 p-4">
+                    <Link href="/" className="font-bold text-primaryGreen hover:font-black">
                         Home
                     </Link>
-                    <Link href="/" className="font-montserrat text-white hover:font-montserrat-bold hover:italic">
+                    <Link href="/" className="font-regular text-black hover:font-bold hover:text-primaryGreen">
                         Product
                     </Link>
-                    <Link href="/" className="font-montserrat-italic text-white hover:font-montserrat-bold hover:not-italic">
+                    <Link href="/" className="font-regular text-black hover:font-bold hover:text-primaryGreen">
                         About
                     </Link>
                 </div>
